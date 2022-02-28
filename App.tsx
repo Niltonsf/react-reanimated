@@ -5,7 +5,7 @@ import { Home } from './src/screens/Home';
 const App = () => {
   return (
     <View style={{ flex: 1 }}>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar barStyle="light-content" />
       <Home />
     </View>
   );
