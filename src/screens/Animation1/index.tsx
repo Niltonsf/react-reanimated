@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Container, Text, Image, Box } from './styles';
+import { Container, Text, Image, Box, Content } from './styles';
 import {
   useSharedValue,
   useAnimatedStyle,
@@ -10,8 +10,10 @@ import {
   withSequence,
 } from 'react-native-reanimated';
 import HeroImg from '../../assets/hero.png';
+import { useWindowDimensions } from 'react-native';
+import { Header } from '../../components/Header';
 
-export function Home() {
+export function Animation1() {
   const titlePosition = useSharedValue(30);
   const imagePosition = useSharedValue(-30);
   const boxWidth = useSharedValue(10);
@@ -79,13 +81,18 @@ export function Home() {
     };
   });
 
+  const { width } = useWindowDimensions();
+
   return (
-    <Container>
-      <Image source={HeroImg} style={[heroStyle]} />
-      <Text style={[titleStyle]}>Hello World!</Text>
-      <Box style={[boxWidthStyle]}>
-        <Text style={[{ color: '#000' }, [titleAppearStyle]]}>Press me!</Text>
-      </Box>
+    <Container style={{ width }}>
+      <Header title="Animation 1" />
+      <Content>
+        <Image source={HeroImg} style={[heroStyle]} />
+        <Text style={[titleStyle]}>Hello World!</Text>
+        <Box style={[boxWidthStyle]}>
+          <Text style={[{ color: '#000' }, [titleAppearStyle]]}>Press me!</Text>
+        </Box>
+      </Content>
     </Container>
   );
 }
