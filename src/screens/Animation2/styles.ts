@@ -6,6 +6,10 @@ export const Content = styled.View`
   justify-content: center;
 `;
 
+export const List = styled.ScrollView`
+	flex: 1
+`;
+
 export const Container = styled.View`
   flex: 1;
   background-color: #13131a;
@@ -16,6 +20,7 @@ export const Box = styled(Animated.View)`
   height: 100px;
   background-color: #fff;
   border-radius: 10px;
+	margin-bottom: 10px;
 `;
 
 export const ButtonBox = styled.TouchableOpacity`
@@ -26,6 +31,7 @@ export const ButtonBox = styled.TouchableOpacity`
   border-radius: 10px;
   align-items: center;
   justify-content: center;
+	margin-bottom: 25px;
 `;
 
 export const ButtonBoxTitle = styled.Text`
